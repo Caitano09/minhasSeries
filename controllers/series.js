@@ -1,7 +1,7 @@
 const labels = [// para usar na tag select
     { id: 'to-watch', name: 'Para Assistir' },
-    { id: 'watching', name: 'assistindo' },
-    { id: 'watched', name: 'assistido' }
+    { id: 'watching', name: 'Assistindo' },
+    { id: 'watched', name: 'Assistido' }
 ]
 
 const pagination = async(model, conditions, params) =>{

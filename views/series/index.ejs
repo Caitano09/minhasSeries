@@ -10,19 +10,23 @@
           <% results.data.forEach(serie => { %>
           <tr>
             <td>
-              <a href="/series/info/<%- serie._id %>"><%- serie.name %></a>
+              <a class="btn btn-outline-dark" href="/series/info/<%- serie._id %>"><%- serie.name %></a>
             </td>
             <td>
-              <span class="badge badge-secondary">
-                <%- labels.filter(label => label.id === serie.status)[0].name %>
+              <% const serieStatus = labels.filter(label => label.id === serie.status)[0].name %>
+              <% let colorStatus %>
+              <% if(serieStatus == 'Assistindo') { colorStatus = 'info' } %>
+              <% if(serieStatus == 'Assistido') { colorStatus = 'success' } %>
+              <% if(serieStatus == 'Para Assistir') { colorStatus = 'warning' } %>
+              <span class="badge badge-<%-colorStatus %>">                
+                <%- serieStatus %>
               </span>
             </td>
             <td>
-              <a href="/series/excluir/<%- serie._id %>"
+              <a class="btn btn-outline-primary" href="/series/excluir/<%- serie._id %>"
                 onclick="return confirm('Deseja realmente excluir?')">Excluir</a>
-            </td>
-            <td>
-              <a href="/series/editar/<%- serie._id %>">Editar</a>
+
+              <a class="btn btn-outline-secondary" href="/series/editar/<%- serie._id %>">Editar</a>
             </td>
           </tr>
           <% }) %>

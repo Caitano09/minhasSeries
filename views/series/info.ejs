@@ -7,7 +7,7 @@
         <h2>Sobre a série: <b><%- serie.name %></b></h2><br>
         <form action="" method="post">
             <textarea class="form-control" name="comentario" id="comentario" cols="30" rows="10"></textarea></br>
-       <input type="submit" value="Adicionar comentário"></br>
+       <input type="submit" value="Adicionar comentário">
         
         <% serie.comments.forEach(comment =>{ %>
             <div class="card"> 
@@ -15,7 +15,7 @@
             </div>
         <% }) %>
 
-
+        <br><a class="btn btn-secondary" href="/series">Voltar</a>
         </form>
       </div>
     </div>
